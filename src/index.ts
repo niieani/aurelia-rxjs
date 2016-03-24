@@ -15,7 +15,7 @@ export function configure(frameworkConfig: FrameworkConfiguration) {
   
   const bindingFunctionInstance = frameworkConfig.container.get(RxBindingFunction)
   if (typeof viewResources.registerBindingFunction === 'function') {
-    viewResources.registerBindingFunction('rx', bindingFunctionInstance)
+    viewResources.registerBindingFunction('@rx', bindingFunctionInstance)
   } else {
     throw new Error('You need to load the aurelia-binding-functions plugin before aurelia-observable-binding-function.')
   }
