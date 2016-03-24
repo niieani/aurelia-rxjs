@@ -1,0 +1,14 @@
+node_modules
+jspm_packages
+bower_components
+.idea
+.DS_STORE
+/dist
+build/reports
+coverage
+test/e2e/dist
+
+# temporary
+src/example-old
+test-off
+backup

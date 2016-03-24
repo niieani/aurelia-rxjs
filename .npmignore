@@ -1,0 +1,16 @@
+jspm_packages
+bower_components
+.idea
+.vscode
+build
+example
+styles
+test
+typings
+aurelia.protractor.js
+index.html
+dist/example-old
+tsconfig.*json
+tsd.json
+tslint.json
+backup

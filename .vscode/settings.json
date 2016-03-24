@@ -1,0 +1,15 @@
+{
+  "typescript.tsdk": "./node_modules/typescript/lib",
+  "files.exclude": {
+    "dist": false,
+    "node_modules": false
+  },
+  "search.exclude": {
+    ".git": true,
+    ".idea": true,
+    "node_modules": true,
+    "build": true,
+    "dist": true,
+    "jspm_packages": true
+  }
+}

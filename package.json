@@ -1,0 +1,75 @@
+{
+  "name": "aurelia-rxjs",
+  "version": "0.1.0",
+  "description": "An Aurelia plugin that makes it possible bind to Rx Observables and Rx Subjects or use them as Binding Signals.",
+  "keywords": [
+    "aurelia",
+    "binding",
+    "aurelia-binding",
+    "async",
+    "rxjs",
+    "rxjs5",
+    "aurelia-binding-function",
+    "aurelia-binding-function"
+  ],
+  "homepage": "http://github.com/niieani/aurelia-rxjs",
+  "bugs": {
+    "url": "https://github.com/niieani/aurelia-rxjs/issues"
+  },
+  "license": "MIT",
+  "author": "Bazyli Brzóska <bazyli.brzoska@gmail.com> (https://invent.life/)",
+  "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/niieani/aurelia-rxjs"
+  },
+  "scripts": {
+    "test": "gulp test",
+    "e2e": "gulp serve e2e",
+    "wrapdts": "./build/wrapdts.sh ./dist/index.d.ts ./dist/aurelia-rxjs.d.ts",
+    "prepublish-ts": "gulp build && npm run wrapdts",
+    "prepublish": "gulp build"
+  },
+  "devDependencies": {
+    "aurelia-framework": "^1.0.0-beta.1.2.0",
+    "browser-sync": "^2.11.0",
+    "conventional-changelog": "0.5.3",
+    "del": "^2.2.0",
+    "es6-module-loader": "^0.17.9",
+    "gulp": "^3.9.0",
+    "gulp-bump": "^1.0.0",
+    "gulp-changed": "^1.3.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^0.6.6",
+    "gulp-protractor": "^0.0.12",
+    "gulp-sourcemaps": "^1.3.0",
+    "gulp-tsb": "^1.10.1",
+    "gulp-tslint": "^4.2.1",
+    "isparta": "^4.0.0",
+    "jasmine-core": "^2.4.1",
+    "jspm": "^0.16.15",
+    "karma": "^0.13.16",
+    "karma-chrome-launcher": "^0.2.2",
+    "karma-jasmine": "^0.3.6",
+    "karma-systemjs": "^0.10.0",
+    "object.assign": "^4.0.3",
+    "require-dir": "^0.3.0",
+    "run-sequence": "^1.1.5",
+    "systemjs": "^0.19.9",
+    "tslint": "^3.2.1",
+    "typescript": "^1.9.0-dev.20160302",
+    "vinyl-paths": "^2.1.0",
+    "yargs": "^3.31.0"
+  },
+  "jspm": {
+    "registry": "npm",
+    "main": "index",
+    "format": "amd",
+    "directories": {
+      "dist": "dist"
+    },
+    "dependencies": {},
+    "devDependencies": {}
+  },
+  "dependencies": {}
+}
