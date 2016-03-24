@@ -30,9 +30,9 @@ An Aurelia plugin that allows you to bind to Rx Observables and Rx Subjects or u
 View:
 
 ```html
-<input value.bind="observable(twoWayBinding)" autofocus>
-<h2>${observable(twoWayBinding)}</h2>
-<button click.delegate="observable(onClick)"></button>
+<input value.bind="rx(twoWayBinding)" autofocus>
+<h2>${rx(twoWayBinding)}</h2>
+<button click.delegate="rx(onClick)"></button>
 <h2>${random & observableSignal: twoWayBinding}</h2>
 ```
 

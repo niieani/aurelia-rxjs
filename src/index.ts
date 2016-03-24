@@ -6,14 +6,14 @@ import {View} from 'aurelia-templating'
 // import {Observable, Observer, Subscription, ReplaySubject, BehaviorSubject, Subject} from 'rxjs/Rx'
 import {sourceContext} from 'aurelia-binding'
 
-const logger = LogManager.getLogger('aurelia-observable')
+const logger = LogManager.getLogger('aurelia-rx')
 
 export function configure(frameworkConfig: FrameworkConfiguration) {
   const viewResources = frameworkConfig.aurelia.resources
-  const bindingBehaviorInstance = frameworkConfig.container.get(ObservableBindingBehavior)
-  viewResources.registerBindingBehavior('observable', bindingBehaviorInstance)
+  const bindingBehaviorInstance = frameworkConfig.container.get(ObservableSignalBindingBehavior)
+  viewResources.registerBindingBehavior('rx', bindingBehaviorInstance)
   
-  const bindingFunctionInstance = frameworkConfig.container.get(ObservableSignalBindingFunction)
+  const bindingFunctionInstance = frameworkConfig.container.get(RxBindingFunction)
   if (typeof viewResources.registerBindingFunction === 'function') {
     viewResources.registerBindingFunction('observableSignal', bindingFunctionInstance)
   } else {
@@ -21,7 +21,7 @@ export function configure(frameworkConfig: FrameworkConfiguration) {
   }
 }
 
-export class ObservableSignalBindingFunction implements BindingFunction {
+export class RxBindingFunction implements BindingFunction {
   connect(callScope: CallScope, binding: Binding, scope: Scope) {
     logger.debug('[connect] start connect for VALUE:', callScope.args[0].name)
     
@@ -163,7 +163,7 @@ export class ObservableSignalBindingFunction implements BindingFunction {
   }
 }
 
-export class ObservableBindingBehavior {
+export class ObservableSignalBindingBehavior {
   bind(binding: Binding & { signalingObservers: Array<Subscription>, call: (context)=>void }, source, ...observables: Array<Observable<any>>) {
     if (!binding.updateTarget) {
       throw new Error('Only property bindings and string interpolation bindings can be signaled.  Trigger, delegate and call bindings cannot be signaled.');
