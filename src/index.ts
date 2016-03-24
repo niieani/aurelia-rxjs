@@ -3,19 +3,19 @@ import {LogManager, FrameworkConfiguration} from 'aurelia-framework'
 
 import {CallScope, Scope, getContextFor, Binding, Listener, Expression} from 'aurelia-binding'
 import {View} from 'aurelia-templating'
-// import {Observable, Observer, Subscription, ReplaySubject, BehaviorSubject, Subject} from 'rxjs/Rx'
 import {sourceContext} from 'aurelia-binding'
+// import {Observable, Observer, Subscription, ReplaySubject, BehaviorSubject, Subject} from 'rxjs/Rx'
 
-const logger = LogManager.getLogger('aurelia-rx')
+const logger = LogManager.getLogger('aurelia-rxjs')
 
 export function configure(frameworkConfig: FrameworkConfiguration) {
   const viewResources = frameworkConfig.aurelia.resources
   const bindingBehaviorInstance = frameworkConfig.container.get(ObservableSignalBindingBehavior)
-  viewResources.registerBindingBehavior('rx', bindingBehaviorInstance)
+  viewResources.registerBindingBehavior('observableSignal', bindingBehaviorInstance)
   
   const bindingFunctionInstance = frameworkConfig.container.get(RxBindingFunction)
   if (typeof viewResources.registerBindingFunction === 'function') {
-    viewResources.registerBindingFunction('observableSignal', bindingFunctionInstance)
+    viewResources.registerBindingFunction('rx', bindingFunctionInstance)
   } else {
     throw new Error('You need to load the aurelia-binding-functions plugin before aurelia-observable-binding-function.')
   }
