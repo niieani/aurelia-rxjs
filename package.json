@@ -1,6 +1,6 @@
 {
   "name": "aurelia-rxjs",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "An Aurelia plugin that makes it possible bind to Rx Observables and Rx Subjects or use them as Binding Signals.",
   "keywords": [
     "aurelia",
